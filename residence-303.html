@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Residence 303 | Clarksville Condo, Austin | The Colorfield</title>
+<meta name="description" content="Residence 303 at The Colorfield: 3 bed, 3.5 bath, 3,302 SF in Clarksville, Austin. Alterstudio-designed, move-in ready, downtown views. Schedule a private tour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --ink: #123832;
+    --paper: #f2efe9;
+    --paper-warm: #ece6db;
+    --field-umber: #C1440E;
+    --field-ochre: #F2A93B;
+    --field-slate: #2C7A6B;
+    --field-coral: #E85D4C;
+    --line: rgba(18,56,50,0.14);
+    --line-soft: rgba(242,239,233,0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-umber);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+  /* Nav */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 26px 40px;
+    mix-blend-mode: difference;
+  }
+
+  header .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+    color: #fff;
+  }
+
+  header nav {
+    display: flex;
+    gap: 34px;
+  }
+
+  header nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  @media (max-width: 780px) {
+    header nav { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #123832 url('hero-exterior.jpg') center 62% / cover no-repeat;
+    color: #f2efe9;
+    overflow: hidden;
+  }
+
+  .hero-field {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(18,56,50,0.15) 0%, rgba(18,56,50,0.35) 45%, rgba(18,56,50,0.92) 92%);
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 0 40px 90px;
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-ochre);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5.4rem);
+    font-weight: 300;
+    line-height: 0.98;
+    max-width: 900px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    margin-top: 26px;
+    max-width: 480px;
+    font-size: 1.02rem;
+    font-weight: 300;
+    color: rgba(242,239,233,0.78);
+  }
+
+  .hero-meta {
+    margin-top: 46px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta div {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .hero-meta .num {
+    font-size: 1.6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+  }
+
+  .hero-meta .lbl {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.55);
+    margin-top: 4px;
+  }
+
+  /* Color field divider, the signature element */
+  .field-divider {
+    display: flex;
+    height: 14px;
+  }
+  .field-divider span { flex: 1; }
+  .field-divider .f1 { background: var(--field-umber); }
+  .field-divider .f2 { background: var(--field-ochre); }
+  .field-divider .f3 { background: var(--field-slate); }
+  .field-divider .f4 { background: var(--field-coral); }
+
+  /* Sections */
+  section { padding: 120px 0; }
+
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 60px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    font-weight: 400;
+    margin-top: 14px;
+  }
+
+  .lede {
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 620px;
+    color: rgba(18,56,50,0.82);
+  }
+
+  .lede + .lede { margin-top: 18px; }
+
+  /* Architecture section */
+  .arch {
+    background: var(--paper);
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .arch-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .arch-plate {
+    aspect-ratio: 4/5;
+    background: var(--field-slate);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arch-plate::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(198,138,46,0.35), transparent 60%);
+  }
+
+  .plate-label {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.75);
+  }
+
+  /* Highlights */
+  .highlights {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .highlights li {
+    list-style: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+    display: flex;
+    gap: 12px;
+  }
+
+  .highlights li:nth-child(odd) { padding-right: 20px; }
+
+  .highlights li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--field-umber);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .highlights { grid-template-columns: 1fr; }
+  }
+
+  /* Residences */
+  .residences {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .residences .eyebrow { color: var(--field-ochre); }
+
+  .residences .lede { color: rgba(242,239,233,0.72); }
+
+  .collection-status {
+    display: flex;
+    gap: 40px;
+    margin: 50px 0 60px;
+    flex-wrap: wrap;
+  }
+
+  .collection-status .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+
+  .collection-status .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-top: 6px;
+  }
+
+  .unit-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .unit-table th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--line-soft);
+    font-weight: 400;
+  }
+
+  .unit-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+
+  .unit-table .unit-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+  }
+
+  .unit-table .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.86rem;
+    color: rgba(242,239,233,0.7);
+  }
+
+  .status-pill {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border: 1px solid rgba(242,239,233,0.3);
+  }
+
+  .status-pill.available {
+    color: var(--field-ochre);
+    border-color: var(--field-ochre);
+  }
+
+  .status-pill.sold {
+    color: rgba(242,239,233,0.4);
+    border-color: rgba(242,239,233,0.2);
+  }
+
+  @media (max-width: 720px) {
+    .unit-table thead { display: none; }
+    .unit-table tr { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
+    .unit-table td { border: none; padding: 2px 0; }
+  }
+
+  /* Neighborhood */
+  .neighborhood {
+    background: var(--paper-warm);
+  }
+
+  .nb-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .nb-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .nb-plate {
+    aspect-ratio: 1/1;
+    background: var(--field-umber);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nb-plate::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(200deg, rgba(61,74,73,0.5), transparent 55%);
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--field-umber);
+    border-bottom: 1px solid var(--field-umber);
+    padding-bottom: 4px;
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+
+  .contact-detail {
+    margin-bottom: 26px;
+  }
+
+  .contact-detail .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-bottom: 6px;
+  }
+
+  .contact-detail .val {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 500px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    margin-bottom: 26px;
+  }
+
+  .field label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-bottom: 8px;
+  }
+
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(242,239,233,0.3);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.98rem;
+    padding: 8px 0;
+    outline: none;
+  }
+
+  .field select option { color: var(--ink); }
+
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--field-ochre);
+  }
+
+  .submit-btn {
+    margin-top: 12px;
+    align-self: flex-start;
+    background: var(--field-ochre);
+    color: var(--ink);
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .submit-btn:hover { background: #d99a3c; }
+
+  .form-note {
+    font-size: 0.82rem;
+    color: rgba(242,239,233,0.5);
+    margin-top: 16px;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(242,239,233,0.45);
+    text-align: center;
+    padding: 34px 0 44px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  footer a { color: rgba(242,239,233,0.7); }
+
+  ::selection { background: var(--field-ochre); color: var(--ink); }
+
+.res-hero {
+  position:relative; height:72vh; min-height:480px;
+  background:#123832 url('img/303/0.jpg') center/cover no-repeat;
+  display:flex; align-items:flex-end;
+}
+.res-hero::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(18,56,50,0.1) 0%, rgba(18,56,50,0.85) 96%);
+}
+.res-hero-content { position:relative; padding:0 40px 56px; max-width:1180px; margin:0 auto; width:100%; color:#f2efe9; }
+.res-back { position:fixed; top:26px; left:40px; z-index:100; color:#fff; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; mix-blend-mode:difference; }
+.res-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.res-gallery-item { aspect-ratio:4/3; background-size:cover; background-position:center; }
+@media (max-width:700px) { .res-gallery { grid-template-columns:repeat(2,1fr); } }
+.res-nav { display:flex; justify-content:space-between; padding:40px; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<a href="index.html#residences" class="res-back">&larr; The Colorfield</a>
+
+<section class="res-hero">
+  <div class="res-hero-content">
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem); font-weight:300; margin-top:14px;">Residence 303</h1>
+  </div>
+</section>
+
+<section style="padding:70px 0 20px;">
+  <div class="wrap">
+    <div style="display:flex; gap:50px; flex-wrap:wrap; margin-bottom:50px; padding-bottom:40px; border-bottom:1px solid var(--line);">
+      <div><div class="eyebrow">Beds / Baths</div><div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">3 / 3.5</div></div>
+      <div><div class="eyebrow">Interior SF</div><div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">3,302 SF</div></div>
+      <div><div class="eyebrow">Total SF</div><div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">3,485 SF</div></div>
+      <div><div class="eyebrow">Status</div><div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">Available</div></div>
+    </div>
+    <p class="lede" style="max-width:640px; margin-bottom:22px;">Residence 303 at The Colorfield is a 3,302 square foot third floor residence in Clarksville, designed by Alterstudio Architecture with expansive glass, generous proportions, and a bright, natural interior palette.</p>
+      <p class="lede" style="max-width:640px; margin-bottom:22px;">The single level floor plan offers three bedrooms, three and one half baths, and a versatile den suited to a private office, media room, library, or additional guest space. A covered terrace extends the living area outdoors, while expansive glazing across the kitchen, dining, and living spaces fills the residence with natural light and creates a seamless connection to the surrounding city.</p>
+      <p class="lede" style="max-width:640px; margin-bottom:22px;">The primary suite offers a private retreat with an oversized custom walk-in closet and spa inspired bath featuring a freestanding soaking tub and dual vanities. Wide plank white oak flooring, light oak millwork, and white and light toned stone create a sophisticated interior that feels warm, timeless, and distinctly contemporary.</p>
+      <p class="lede" style="max-width:640px; margin-bottom:22px;">The chef's kitchen is equipped with a complete Gaggenau appliance suite, including built-in refrigerator and freezer, gas cooktop, wall oven, coffee system, dishwasher, and dual wine columns. A generous laundry room with built-in cabinetry, storage, and extensive countertop space provides additional functionality. Two reserved garage parking spaces are included.</p>
+      <p class="lede" style="max-width:640px; margin-bottom:22px;">The Colorfield is a boutique collection of just ten luxury condominiums in Clarksville, in the heart of Old West Austin. Residents enjoy a secure parking garage, staffed concierge and front desk, and two elevators, all within minutes of Downtown Austin, the Texas Capitol, Lady Bird Lake, and some of Austin's most desirable dining, shopping, parks, and cultural destinations.</p>
+      <p class="lede" style="max-width:640px; margin-bottom:22px;">Construction is complete, and Residence 303 is available now.</p>
+  </div>
+</section>
+
+<section style="background:var(--ink); padding:0 0 90px;">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--field-ochre); margin-bottom:26px;">The Film</div>
+    <div style="position:relative; width:100%; padding-top:56.25%; background:#000;">
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/mjpFrPZ2RsQ"
+        title="Residence 303"
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<section style="padding:0 0 90px;">
+  <div class="wrap">
+    <div class="res-gallery">
+      <div class="res-gallery-item" style="background-image:url('img/303/1.jpg');"></div>
+<div class="res-gallery-item" style="background-image:url('img/303/2.jpg');"></div>
+<div class="res-gallery-item" style="background-image:url('img/303/3.jpg');"></div>
+<div class="res-gallery-item" style="background-image:url('img/303/4.jpg');"></div>
+<div class="res-gallery-item" style="background-image:url('img/303/5.jpg');"></div>
+<div class="res-gallery-item" style="background-image:url('img/303/6.jpg');"></div>
+    </div>
+  </div>
+</section>
+
+<div class="res-nav">
+  <a href="residence-302.html">&larr; Residence 302</a>
+  <a href="index.html#contact">Request A Private Tour</a>
+  <a href="residence-304.html">Residence 304 &rarr;</a>
+</div>
+
+<footer>
+  <div class="wrap">The Colorfield &middot; 1006 Baylor Street, Austin, TX 78703 &middot; Represented by Bridget Ramey, Kuper Sotheby's International Realty</div>
+</footer>
+
+</body>
+</html>
