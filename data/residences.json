@@ -1,0 +1,163 @@
+[
+  {
+    "number": "304",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,744 SF",
+    "total_sf": "4,013 SF",
+    "status": "Available",
+    "price": "$4,118,000",
+    "video_id": "i6Alj94gPcM",
+    "floorplan": "img/floorplans/floorplan-204-304.jpg",
+    "images": [
+      "img/304/0.jpg",
+      "img/304/1.jpg",
+      "img/304/2.jpg",
+      "img/304/3.jpg",
+      "img/304/4.jpg",
+      "img/304/5.jpg",
+      "img/304/6.jpg"
+    ]
+  },
+  {
+    "number": "204",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,744 SF",
+    "total_sf": "4,013 SF",
+    "status": "Available",
+    "price": "$3,899,000",
+    "video_id": "CmZyM1Am7C0",
+    "floorplan": "img/floorplans/floorplan-204-304.jpg",
+    "images": [
+      "img/204/0.jpg",
+      "img/204/1.jpg",
+      "img/204/2.jpg",
+      "img/204/3.jpg",
+      "img/204/4.jpg",
+      "img/204/5.jpg",
+      "img/204/6.jpg"
+    ]
+  },
+  {
+    "number": "303",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,302 SF",
+    "total_sf": "3,485 SF",
+    "status": "Available",
+    "price": "$3,785,000",
+    "video_id": "mjpFrPZ2RsQ",
+    "floorplan": "img/floorplans/floorplan-203-303.jpg",
+    "images": [
+      "img/303/0.jpg",
+      "img/303/1.jpg",
+      "img/303/2.jpg",
+      "img/303/3.jpg",
+      "img/303/4.jpg",
+      "img/303/5.jpg",
+      "img/303/6.jpg"
+    ]
+  },
+  {
+    "number": "203",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,302 SF",
+    "total_sf": "3,485 SF",
+    "status": "Available",
+    "price": "$2,990,000",
+    "video_id": "Euglr2db0G8",
+    "floorplan": "img/floorplans/floorplan-203-303.jpg",
+    "images": [
+      "img/203/0.jpg",
+      "img/203/1.jpg",
+      "img/203/2.jpg",
+      "img/203/3.jpg",
+      "img/203/4.jpg",
+      "img/203/5.jpg",
+      "img/203/6.jpg"
+    ]
+  },
+  {
+    "number": "302",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,293 SF",
+    "total_sf": "3,476 SF",
+    "status": "Available",
+    "price": "$3,786,000",
+    "video_id": "MWolRsFmhiw",
+    "floorplan": "img/floorplans/floorplan-202-302.jpg",
+    "images": [
+      "img/302/0.jpg",
+      "img/302/1.jpg",
+      "img/302/2.jpg",
+      "img/302/3.jpg",
+      "img/302/4.jpg",
+      "img/302/5.jpg",
+      "img/302/6.jpg"
+    ]
+  },
+  {
+    "number": "202",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,293 SF",
+    "total_sf": "3,476 SF",
+    "status": "Available",
+    "price": "$2,990,000",
+    "video_id": "RV96psVBG4M",
+    "floorplan": "img/floorplans/floorplan-202-302.jpg",
+    "images": [
+      "img/202/0.jpg",
+      "img/202/1.jpg",
+      "img/202/2.jpg",
+      "img/202/3.jpg",
+      "img/202/4.jpg",
+      "img/202/5.jpg",
+      "img/202/6.jpg"
+    ]
+  },
+  {
+    "number": "301",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,575 SF",
+    "total_sf": "3,844 SF",
+    "status": "Available",
+    "price": "$3,750,000",
+    "video_id": "F5SPCz0P5bE",
+    "floorplan": "img/floorplans/floorplan-201-301.jpg",
+    "images": [
+      "img/301/0.jpg",
+      "img/301/1.jpg",
+      "img/301/2.jpg",
+      "img/301/3.jpg",
+      "img/301/4.jpg",
+      "img/301/5.jpg",
+      "img/301/6.jpg"
+    ]
+  },
+  {
+    "number": "201",
+    "beds": 3,
+    "baths": "3 / 3.5",
+    "interior_sf": "3,575 SF",
+    "total_sf": "3,844 SF",
+    "status": "Available",
+    "price": "$3,250,000",
+    "video_id": "jsqxFNjK4cE",
+    "floorplan": "img/floorplans/floorplan-201-301.jpg",
+    "images": [
+      "img/201/0.jpg",
+      "img/201/1.jpg",
+      "img/201/2.jpg",
+      "img/201/3.jpg",
+      "img/201/4.jpg",
+      "img/201/5.jpg",
+      "img/201/6.jpg",
+      "img/201/7.jpg"
+    ]
+  }
+]
