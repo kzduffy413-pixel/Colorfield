@@ -1,23 +1,28 @@
-// Hero video sound toggle
-// Adds a simple SOUND ON / SOUND OFF button that toggles the video's mute state via the YouTube iframe API using postMessage.
+// Hero video: full-bleed native video sizing + sound toggle
 
 (function(){
-  // Create the control and append to hero-content
+  function initCoverSizing(){
+    var wraps = document.querySelectorAll('.hero-video-wrap, .res-video-wrap');
+    wraps.forEach(function(wrap){
+      var video = wrap.querySelector('video');
+      if(video) video.setAttribute('playsinline', '');
+    });
+  }
+
   function initHeroSoundToggle(){
-    var hero = document.querySelector('.hero');
+    var hero = document.querySelector('.hero, .res-hero');
     if(!hero) return;
-    var cont = hero.querySelector('.hero-content');
+    var cont = hero.querySelector('.hero-content, .res-hero-content');
     if(!cont) return;
 
     var btn = document.createElement('button');
     btn.className = 'hero-sound-toggle';
     btn.setAttribute('aria-pressed','true');
     btn.textContent = 'SOUND OFF';
-    btn.style.cssText = 'position:absolute;right:40px;top:36px;padding:8px 12px;background:rgba(242,239,233,0.9);border:none;font-family:IBM Plex Mono,monospace';
-    cont.appendChild(btn);
+    hero.appendChild(btn);
 
-    var iframe = document.getElementById('heroVideo');
-    if(!iframe) return;
+    var video = document.getElementById('heroVideo');
+    if(!video) return;
 
     var muted = true;
     // store preference in session
@@ -28,21 +33,15 @@
       muted = !muted;
       setButton();
       try{ sessionStorage.setItem('colorfield-hero-muted', muted ? 'true':'false'); } catch(e){}
-      postMute();
+      video.muted = muted;
     });
 
     function setButton(){ btn.textContent = muted ? 'SOUND ON':'SOUND OFF'; btn.setAttribute('aria-pressed', muted ? 'true':'false'); }
 
-    function postMute(){
-      // YouTube postMessage to control mute via the API
-      try{
-        iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: muted ? 'mute' : 'unMute', args: [] }), '*');
-      }catch(e){/* ignore */}
-    }
-
-    // ensure we send initial mute/unmute once iframe loads
-    iframe.addEventListener('load', function(){ postMute(); });
+    video.addEventListener('loadeddata', function(){ video.muted = muted; });
   }
 
-  if(document.readyState==='complete' || document.readyState==='interactive') initHeroSoundToggle(); else document.addEventListener('DOMContentLoaded', initHeroSoundToggle);
+  function init(){ initCoverSizing(); initHeroSoundToggle(); }
+
+  if(document.readyState==='complete' || document.readyState==='interactive') init(); else document.addEventListener('DOMContentLoaded', init);
 })();

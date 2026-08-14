@@ -20,6 +20,38 @@ const path = require('path');
 const DATA_FILE = path.join(__dirname, '../data/residences.json');
 const TEMPLATE_FILE = path.join(__dirname, '../templates/residence-template.html');
 const OUTPUT_DIR = path.join(__dirname, '../');
+const IMG_ROOT = path.join(__dirname, '../img');
+
+// Number of images shown in the curated preview grid before "View All"
+const PREVIEW_COUNT = 6;
+
+/**
+ * Discover all unique gallery images for a residence directly from the
+ * filesystem (img/{number}/), so counts always reflect actual uploaded photography.
+ * Sort order: 0.jpg..7.jpg first (the original curated set), then any
+ * additional uploaded photo_online_XXX.jpg files in ascending numeric order.
+ */
+function discoverResidenceImages(number) {
+  const dir = path.join(IMG_ROOT, number);
+  const files = fs.readdirSync(dir).filter(f => /\.jpe?g$/i.test(f));
+
+  files.sort((a, b) => {
+    const aNumbered = /^\d+\.jpe?g$/i.test(a);
+    const bNumbered = /^\d+\.jpe?g$/i.test(b);
+    if (aNumbered && bNumbered) return parseInt(a) - parseInt(b);
+    if (aNumbered && !bNumbered) return -1;
+    if (!aNumbered && bNumbered) return 1;
+    const aNum = parseInt(a.match(/(\d+)/)[1], 10);
+    const bNum = parseInt(b.match(/(\d+)/)[1], 10);
+    return aNum - bNum;
+  });
+
+  return files.map(f => `img/${number}/${f}`);
+}
+
+function residenceVideoPath(number) {
+  return `/Videos/${number}%20-%20The%20Colorfield%20-%20Austin,%20TX%20-%20Bridget%20Ramey.mp4`;
+}
 
 /**
  * Read and parse the canonical residences data
@@ -53,10 +85,10 @@ function formatImagesJson(images) {
 }
 
 /**
- * Generate gallery preview HTML (first 6 images)
+ * Generate gallery preview HTML (curated editorial selection, not the full set)
  */
 function generateGalleryPreview(images) {
-  const preview = images.slice(0, 6);
+  const preview = images.slice(0, PREVIEW_COUNT);
   return preview
     .map(img => `<div class="res-gallery-item" style="background-image:url('${img}'); background-size:cover; background-position:center;"></div>`)
     .join('\n      ');
@@ -72,7 +104,7 @@ function generateOtherResidences(residences, currentNumber) {
   const other = ordered.filter(r => r.number !== currentNumber);
   
   return other
-    .map(r => `<div style="text-align:center;"><a href="residence-${r.number}.html" style="display:block;"><div style="aspect-ratio:4/5;background-image:url('img/${r.number}/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence ${r.number}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">${r.price}</div></a></div>`)
+    .map(r => `<div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-${r.number}.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/${r.number}/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence ${r.number}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">${r.price}</div></a></div>`)
     .join('\n      ');
 }
 
@@ -91,15 +123,17 @@ function substituteTemplate(template, residence, residences) {
   html = html.replace(/{{status}}/g, residence.status);
   html = html.replace(/{{price}}/g, residence.price);
   html = html.replace(/{{video_id}}/g, residence.video_id);
+  html = html.replace(/{{residence_video}}/g, residenceVideoPath(residence.number));
   html = html.replace(/{{floorplan}}/g, residence.floorplan);
   
-  // Gallery images
-  const imagesJson = formatImagesJson(residence.images);
-  const galleryPreview = generateGalleryPreview(residence.images);
+  // Gallery images - discovered live from img/{number}/ so counts always match uploaded photography
+  const images = discoverResidenceImages(residence.number);
+  const imagesJson = formatImagesJson(images);
+  const galleryPreview = generateGalleryPreview(images);
   
   html = html.replace(/{{gallery_preview}}/g, galleryPreview);
   html = html.replace(/{{images_json}}/g, imagesJson);
-  html = html.replace(/{{images_count}}/g, residence.images.length);
+  html = html.replace(/{{images_count}}/g, images.length);
   
   // Explore other residences
   const otherResidences = generateOtherResidences(residences, residence.number);
