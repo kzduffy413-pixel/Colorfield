@@ -1,21 +1,135 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Residence Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Residence {{number}} | The Colorfield</title>
+<meta name="description" content="Residence {{number}} at The Colorfield: {{beds}} bed, {{baths}} bath, {{interior_sf}} in Clarksville, Austin.">
+<link rel="stylesheet" href="/assets/css/styles.css">
 </head>
 <body>
-  <!-- Simple template used by generator. -->
-  <h1>Residence {{number}}</h1>
-  <p>Price: {{price}}</p>
-  <p>Beds: {{beds}}</p>
-  <p>Baths: {{baths}}</p>
-  <p>Interior: {{interior_sf}}</p>
-  <p>Total: {{total_sf}}</p>
-  <p>Status: {{status}}</p>
-  <p>Video ID: {{video_id}}</p>
-  <p>Floorplan: <a href="{{floorplan}}">View</a></p>
-  <p>Images: {{images}}</p>
+<a href="index.html#residences" class="res-back">&larr; The Colorfield</a>
+
+<!-- 1) Property Video Hero -->
+<section class="res-hero" style="background:#17324A url('img/{{number}}/0.jpg') center/cover no-repeat;">
+  <div class="res-hero-content">
+    <h1 style="font-size:clamp(2.4rem,5vw,4rem); font-weight:300; margin-top:14px;">Residence {{number}}</h1>
+    <div style="margin-top:10px; font-family:IBM Plex Mono,monospace;">{{beds}} / {{baths}} &nbsp; &middot; &nbsp; {{interior_sf}}</div>
+  </div>
+  <iframe id="heroVideo" src="https://www.youtube-nocookie.com/embed/{{video_id}}?autoplay=1&mute=1&loop=1&playlist={{video_id}}&controls=0&modestbranding=1&playsinline=1&rel=0" title="Residence {{number}}" style="display:none;" allow="autoplay; encrypted-media; picture-in-picture"></iframe>
+</section>
+
+<!-- 2) Description + Facts -->
+<section style="padding:70px 0 20px;">
+  <div class="wrap">
+    <div style="display:flex; gap:50px; flex-wrap:wrap; margin-bottom:30px; padding-bottom:20px; border-bottom:1px solid var(--line);">
+      <div>
+        <div class="eyebrow">Beds / Baths</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">{{beds}} / {{baths}}</div>
+      </div>
+      <div>
+        <div class="eyebrow">Interior SF</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">{{interior_sf}}</div>
+      </div>
+      <div>
+        <div class="eyebrow">Total SF</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">{{total_sf}}</div>
+      </div>
+      <div>
+        <div class="eyebrow">Status</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.3rem; margin-top:6px;">{{status}}</div>
+      </div>
+      <div>
+        <div class="eyebrow">List Price</div>
+        <div style="font-family:'Fraunces',serif; font-size:1.5rem; margin-top:6px;">{{price}}</div>
+      </div>
+    </div>
+
+    <div class="lede" style="margin-bottom:18px;">Residence {{number}} at The Colorfield offers generous interiors and an elevated design by Alterstudio Architecture. Bright, open living spaces flow to private outdoor living with refined finishes throughout.</div>
+
+  </div>
+</section>
+
+<!-- 3) Photo gallery preview + View All -->
+<section style="padding:0 0 90px;">
+  <div class="wrap">
+    <div class="res-gallery">
+      <!-- Preview up to first 6 images -->
+      {{gallery_preview}}
+    </div>
+    <div style="margin-top:14px;">
+      <a href="#" class="view-all-photos" data-gallery='[{{images_json}}]'>VIEW ALL {{images_count}} PHOTOS</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4) Discover the Colorfield (project film non-autoplay) -->
+<section style="background:var(--ink); padding:0 0 90px;">
+  <div class="wrap">
+    <div class="eyebrow" style="color:var(--field-ochre); margin-bottom:26px;">Discover The Colorfield</div>
+    <div style="position:relative; width:100%; padding-top:56.25%; background:#000;">
+      <iframe src="https://www.youtube-nocookie.com/embed/xpx2CIHC3bk" title="The Colorfield" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- 5) Amenities (icon grid) -->
+<section style="padding:40px 0 90px; background:var(--paper);">
+  <div class="wrap">
+    <div class="eyebrow">Amenities</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:20px;margin-top:20px;">
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-01.svg" alt="Fitness" style="width:40px;height:40px;"> <div>Fitness center</div></div>
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-02.svg" alt="Parking" style="width:40px;height:40px;"> <div>Secure garage parking</div></div>
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-03.svg" alt="Concierge" style="width:40px;height:40px;"> <div>Concierge & front desk</div></div>
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-04.svg" alt="Mail" style="width:40px;height:40px;"> <div>Mail collection</div></div>
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-05.svg" alt="Elevators" style="width:40px;height:40px;"> <div>Two high speed elevators</div></div>
+      <div style="display:flex;gap:12px;align-items:center;"><img src="/assets/icons/amenity-06.svg" alt="Grill" style="width:40px;height:40px;"> <div>Outdoor grilling area</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6) Contact form -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-head">
+        <div class="eyebrow" style="color:var(--field-ochre);">Contact The Colorfield</div>
+        <h2>The building is complete. Come see it.</h2>
+      </div>
+      <div class="contact-detail"><div class="lbl">Address</div><div class="val">1006 Baylor Street<br>Austin, TX 78703</div></div>
+      <div class="contact-detail"><div class="lbl">Phone</div><div class="val"><a href="tel:512-796-2602">512.796.2602</a></div></div>
+      <div class="contact-detail"><div class="lbl">Listed By</div><div class="val">Bridget Ramey, Kuper Sotheby's International Realty</div></div>
+    </div>
+
+    <form name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="tour-request">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <input type="hidden" name="residence-of-interest" value="Residence {{number}}">
+      <div class="eyebrow" style="margin-bottom:18px;">Request A Private Tour</div>
+      <div class="field-row">
+        <div class="field"><label for="fname">First Name</label><input type="text" id="fname" name="first-name" required></div>
+        <div class="field"><label for="lname">Last Name</label><input type="text" id="lname" name="last-name" required></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="phone">Phone</label><input type="tel" id="phone" name="phone" required></div>
+        <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+      </div>
+      <button type="submit" class="submit-btn">Request A Private Tour</button>
+    </form>
+  </div>
+</section>
+
+<!-- 7) Explore other residences -->
+<section style="padding:30px 0 90px;">
+  <div class="wrap">
+    <div class="eyebrow">Explore</div>
+    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:14px">{{other_residences}}</div>
+  </div>
+</section>
+
+<footer><div class="wrap">The Colorfield &middot; 1006 Baylor Street, Austin, TX 78703 &middot; Represented by Bridget Ramey, Kuper Sotheby's International Realty</div></footer>
+
+<script src="/assets/js/gallery-lightbox.js"></script>
+<script src="/assets/js/hero-video.js"></script>
 </body>
 </html>
