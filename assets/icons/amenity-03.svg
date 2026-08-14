@@ -1,0 +1,9 @@
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <desc>Concierge Icon</desc>
+  <g stroke="#17324A" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14"/>
+    <path d="M3 5L12 2L21 5"/>
+    <line x1="12" y1="2" x2="12" y2="5"/>
+    <circle cx="12" cy="12" r="2"/>
+  </g>
+</svg>
