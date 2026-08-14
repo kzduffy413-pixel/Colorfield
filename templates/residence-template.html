@@ -94,7 +94,7 @@
       <div class="eyebrow">Amenities</div>
       <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);">Shared spaces for residents.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:36px;">
+    <div class="res-amenities-grid" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:36px;">
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-01.svg" alt="Fitness Center" style="width:44px;height:44px;margin-bottom:16px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Fitness Center</div>
@@ -106,10 +106,6 @@
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-03.svg" alt="Concierge & Front Desk" style="width:44px;height:44px;margin-bottom:16px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Concierge & Front Desk</div>
-      </div>
-      <div style="text-align:center;">
-        <img src="/assets/icons/amenity-04.svg" alt="Mail Collection" style="width:44px;height:44px;margin-bottom:16px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Mail Collection</div>
       </div>
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-05.svg" alt="Two High Speed Elevators" style="width:44px;height:44px;margin-bottom:16px;">
@@ -124,7 +120,7 @@
 </section>
 
 <!-- 7) Contact form -->
-<section class="contact" id="contact">
+<section class="contact" id="contact" style="padding-top:82px; padding-bottom:70px;">
   <div class="wrap contact-grid">
     <div>
       <div class="section-head">
@@ -136,7 +132,7 @@
       <div class="contact-detail"><div class="lbl">Listed By</div><div class="val">Bridget Ramey, Kuper Sotheby's International Realty</div></div>
     </div>
 
-    <form name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+    <form class="residence-contact-form" name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
       <input type="hidden" name="form-name" value="tour-request">
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
       <input type="hidden" name="residence-of-interest" value="Residence {{number}}">
@@ -155,10 +151,10 @@
 </section>
 
 <!-- 8) Explore other residences -->
-<section style="padding:30px 0 90px;">
+<section style="padding:26px 0 64px;">
   <div class="wrap">
     <div class="eyebrow">Explore</div>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:14px">{{other_residences}}</div>
+    <div class="other-residences-grid">{{other_residences}}</div>
   </div>
 </section>
 

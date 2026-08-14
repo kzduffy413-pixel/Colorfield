@@ -99,7 +99,7 @@
       <div class="eyebrow">Amenities</div>
       <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);">Shared spaces for residents.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:36px;">
+    <div class="res-amenities-grid" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:36px;">
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-01.svg" alt="Fitness Center" style="width:44px;height:44px;margin-bottom:16px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Fitness Center</div>
@@ -111,10 +111,6 @@
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-03.svg" alt="Concierge & Front Desk" style="width:44px;height:44px;margin-bottom:16px;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Concierge & Front Desk</div>
-      </div>
-      <div style="text-align:center;">
-        <img src="/assets/icons/amenity-04.svg" alt="Mail Collection" style="width:44px;height:44px;margin-bottom:16px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink);">Mail Collection</div>
       </div>
       <div style="text-align:center;">
         <img src="/assets/icons/amenity-05.svg" alt="Two High Speed Elevators" style="width:44px;height:44px;margin-bottom:16px;">
@@ -129,7 +125,7 @@
 </section>
 
 <!-- 7) Contact form -->
-<section class="contact" id="contact">
+<section class="contact" id="contact" style="padding-top:82px; padding-bottom:70px;">
   <div class="wrap contact-grid">
     <div>
       <div class="section-head">
@@ -141,7 +137,7 @@
       <div class="contact-detail"><div class="lbl">Listed By</div><div class="val">Bridget Ramey, Kuper Sotheby's International Realty</div></div>
     </div>
 
-    <form name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+    <form class="residence-contact-form" name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
       <input type="hidden" name="form-name" value="tour-request">
       <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
       <input type="hidden" name="residence-of-interest" value="Residence 304">
@@ -160,16 +156,16 @@
 </section>
 
 <!-- 8) Explore other residences -->
-<section style="padding:30px 0 90px;">
+<section style="padding:26px 0 64px;">
   <div class="wrap">
     <div class="eyebrow">Explore</div>
-    <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:14px"><div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-204.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/204/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 204</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$3,899,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-303.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/303/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 303</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$3,785,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-203.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/203/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 203</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$2,990,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-302.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/302/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 302</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$3,786,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-202.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/202/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 202</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$2,990,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-301.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/301/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 301</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$3,750,000</div></a></div>
-      <div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-201.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/201/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence 201</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">$3,250,000</div></a></div></div>
+    <div class="other-residences-grid"><article class="other-residence-card"><a href="residence-204.html"><div class="other-residence-image" style="background-image:url('img/204/0.jpg');"></div><div class="other-residence-name">Residence 204</div><div class="other-residence-price">$3,899,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-303.html"><div class="other-residence-image" style="background-image:url('img/303/0.jpg');"></div><div class="other-residence-name">Residence 303</div><div class="other-residence-price">$3,785,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-203.html"><div class="other-residence-image" style="background-image:url('img/203/0.jpg');"></div><div class="other-residence-name">Residence 203</div><div class="other-residence-price">$2,990,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-302.html"><div class="other-residence-image" style="background-image:url('img/302/0.jpg');"></div><div class="other-residence-name">Residence 302</div><div class="other-residence-price">$3,786,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-202.html"><div class="other-residence-image" style="background-image:url('img/202/0.jpg');"></div><div class="other-residence-name">Residence 202</div><div class="other-residence-price">$2,990,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-301.html"><div class="other-residence-image" style="background-image:url('img/301/0.jpg');"></div><div class="other-residence-name">Residence 301</div><div class="other-residence-price">$3,750,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article>
+      <article class="other-residence-card"><a href="residence-201.html"><div class="other-residence-image" style="background-image:url('img/201/0.jpg');"></div><div class="other-residence-name">Residence 201</div><div class="other-residence-price">$3,250,000</div><span class="other-residence-link">View Residence &rarr;</span></a></article></div>
   </div>
 </section>
 

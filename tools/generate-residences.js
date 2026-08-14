@@ -104,7 +104,7 @@ function generateOtherResidences(residences, currentNumber) {
   const other = ordered.filter(r => r.number !== currentNumber);
   
   return other
-    .map(r => `<div style="text-align:center; flex:1 1 150px; max-width:180px;"><a href="residence-${r.number}.html" style="display:block; color:inherit; text-decoration:none;"><div style="aspect-ratio:4/5;background-image:url('img/${r.number}/0.jpg');background-size:cover;background-position:center;margin-bottom:12px;"></div><div style="font-family:'Fraunces',serif;font-size:1.1rem;margin-bottom:6px;">Residence ${r.number}</div><div style="font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--field-ochre);">${r.price}</div></a></div>`)
+    .map(r => `<article class="other-residence-card"><a href="residence-${r.number}.html"><div class="other-residence-image" style="background-image:url('img/${r.number}/0.jpg');"></div><div class="other-residence-name">Residence ${r.number}</div><div class="other-residence-price">${r.price}</div><span class="other-residence-link">View Residence &rarr;</span></a></article>`)
     .join('\n      ');
 }
 

@@ -8,6 +8,8 @@
 <meta name="keywords" content="Clarksville condos for sale, luxury condos Austin, downtown Austin condo, 1006 Baylor Street Austin, Alterstudio Architecture, boutique condominium Austin">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root {
     --ink: #17324A;
@@ -214,7 +216,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(2.6rem, 6vw, 5.4rem);
+    font-size: clamp(2.6rem, 5vw, 4.8rem);
     font-weight: 300;
     line-height: 0.98;
     max-width: 900px;
@@ -402,6 +404,14 @@
     .details-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
   }
 
+  @media (max-width: 900px) {
+    .homepage-amenities-grid { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  }
+
+  @media (max-width: 600px) {
+    .homepage-amenities-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 28px 16px !important; }
+  }
+
   /* Residences */
   .residences {
     background: var(--ink);
@@ -415,7 +425,7 @@
   .collection-status {
     display: flex;
     gap: 40px;
-    margin: 50px 0 60px;
+    margin: 34px 0 42px;
     flex-wrap: wrap;
   }
 
@@ -508,6 +518,17 @@
   .neighborhood {
     background: var(--paper-warm);
   }
+
+  .neighborhood-directory { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:32px; margin-bottom:30px; }
+  .destination-link { display:block; width:100%; border:0; background:none; color:var(--ink); text-align:left; font:300 0.95rem/1.8 Inter,sans-serif; cursor:pointer; padding:0; }
+  .destination-link span { display:inline-block; width:28px; color:rgba(23,50,74,0.46); font:0.72rem "IBM Plex Mono",monospace; letter-spacing:.04em; }
+  .destination-link:hover span,.destination-link.is-selected span { color:var(--field-umber); }
+  .neighborhood-map { width:100%; height:400px; margin-bottom:28px; border:1px solid var(--line); overflow:hidden; }
+  .destination-marker,.colorfield-marker { display:flex!important; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 1px 4px rgba(23,50,74,.25); font:500 0.66rem "IBM Plex Mono",monospace; }
+  .destination-marker { background:var(--paper); border:2px solid var(--ink); color:var(--ink); }
+  .colorfield-marker { border-radius:2px; background:var(--ink); border:2px solid var(--field-ochre); color:var(--paper); letter-spacing:.08em; font-size:.56rem; }
+  @media (max-width:860px) { .neighborhood-directory { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 32px; } }
+  @media (max-width:560px) { .neighborhood-directory { grid-template-columns:1fr; gap:24px; } .neighborhood-map { height:360px; } }
 
   .nb-grid {
     display: grid;
@@ -723,7 +744,7 @@
   <div class="hero-field"></div>
   <div class="hero-content">
     <div class="hero-tag">1006 Baylor Street<br>Clarksville &middot; Austin, Texas</div>
-    <h1>Eight luxury residences<br>designed for refined living.</h1>
+    <h1>Ten residences.<br>Distinctly Austin.<br>Each entirely its own.</h1>
     <div class="hero-cta-row">
       <a href="#residences" class="hero-btn hero-btn-solid">View Residences</a>
       <a href="#contact" class="hero-btn hero-btn-outline">Request A Private Tour</a>
@@ -780,11 +801,10 @@
   </div>
 </section>
 
-<section style="padding:100px 0; background:var(--paper);">
+<section style="padding:88px 0; background:var(--paper);">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:60px;">
+    <div class="section-head" style="margin-bottom:36px;">
       <div class="eyebrow">The Details</div>
-      <h2>Refined architectural living.</h2>
     </div>
     
     <div class="details-grid" style="display:grid; grid-template-columns:repeat(2, 1fr); gap:50px 60px; margin-bottom:50px;">
@@ -861,7 +881,7 @@
       </div>
     </div>
     
-    <div style="display:flex; gap:60px; flex-wrap:wrap; padding-top:50px; border-top:1px solid var(--line);">
+    <div style="display:flex; gap:60px; flex-wrap:wrap; padding-top:40px; border-top:1px solid var(--line);">
       <div>
         <div class="eyebrow">Architecture</div>
         <div style="font-family:'Fraunces',serif; font-size:1.05rem; margin-top:8px;">Alterstudio Architecture, LLP</div>
@@ -882,63 +902,44 @@
   <div class="wrap">
     <div class="section-head" style="margin-bottom:60px;">
       <div class="eyebrow" style="color:var(--field-ochre);">Amenities</div>
-      <h2>Shared spaces designed for residents.</h2>
+      <h2>An elevated everyday.</h2>
     </div>
     
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:50px;">
+    <div class="homepage-amenities-grid" style="display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:28px;">
       <div>
         <div style="aspect-ratio:16/9; background-image:url('img/amenities/fitness-center.jpg'); background-size:cover; background-position:center; margin-bottom:20px; border:1px solid rgba(242,239,233,0.15);"></div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Fitness Center</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">State-of-the-art fitness facilities available to all residents.</p>
+        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">A private fitness center for convenient, everyday training.</p>
       </div>
       
       <div>
         <div style="aspect-ratio:16/9; background-image:url('img/amenities/secure-garage-parking.jpg'); background-size:cover; background-position:center; margin-bottom:20px; border:1px solid rgba(242,239,233,0.15);"></div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Secure Garage Parking</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Two reserved parking spaces per residence in secure garage.</p>
+        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Two reserved parking spaces per residence within the secure garage.</p>
       </div>
       
       <div>
-        <div style="aspect-ratio:16/9; background:rgba(242,239,233,0.04); margin-bottom:20px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(242,239,233,0.15);">
-          <svg viewBox="0 0 24 24" style="width:44px; height:44px; stroke:rgba(242,239,233,0.3); stroke-width:1.5; fill:none;">
-            <rect x="3" y="5" width="18" height="14"/>
-            <path d="M3 5L12 2L21 5"/>
-            <line x1="12" y1="2" x2="12" y2="5"/>
-            <circle cx="12" cy="12" r="2"/>
-          </svg>
-        </div>
+        <div style="aspect-ratio:16/9; background-image:url('Concierge.png'); background-size:cover; background-position:center; margin-bottom:20px; border:1px solid rgba(242,239,233,0.15);"></div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Concierge & Front Desk</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Dedicated concierge and front desk staff to assist residents.</p>
-      </div>
-      
-      <div>
-        <div style="aspect-ratio:16/9; background:rgba(242,239,233,0.04); margin-bottom:20px; display:flex; align-items:center; justify-content:center; border:1px solid rgba(242,239,233,0.15);">
-          <svg viewBox="0 0 24 24" style="width:44px; height:44px; stroke:rgba(242,239,233,0.3); stroke-width:1.5; fill:none;">
-            <rect x="2" y="4" width="20" height="14"/>
-            <path d="M2 4L12 11L22 4"/>
-            <line x1="12" y1="11" x2="12" y2="18"/>
-          </svg>
-        </div>
-        <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Mail Collection</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Secure mail collection and package handling services.</p>
+        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Dedicated concierge and front desk service for residents and guests.</p>
       </div>
       
       <div>
         <div style="aspect-ratio:16/9; background-image:url('img/amenities/elevators.jpg'); background-size:cover; background-position:center; margin-bottom:20px; border:1px solid rgba(242,239,233,0.15);"></div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Two High Speed Elevators</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Two high-speed elevators serving just ten residences with minimal wait.</p>
+        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Two elevators provide convenient access to the building's residences.</p>
       </div>
       
       <div>
         <div style="aspect-ratio:16/9; background-image:url('img/amenities/outdoor-grilling.jpg'); background-size:cover; background-position:center; margin-bottom:20px; border:1px solid rgba(242,239,233,0.15);"></div>
         <div style="font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--field-ochre); margin-bottom:8px;">Outdoor Grilling Area</div>
-        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">Outdoor grilling facilities for resident entertaining and gatherings.</p>
+        <p style="font-size:0.96rem; line-height:1.6; color:rgba(242,239,233,0.8);">A dedicated outdoor grilling area for relaxed entertaining.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section style="background:var(--paper-warm); padding:100px 0;">
+<section style="background:var(--paper-warm); padding:78px 0;">
   <div class="wrap nb-grid">
     <div>
       <div class="section-head" style="margin-bottom:24px;">
@@ -958,47 +959,24 @@
     <div class="section-head" style="margin-bottom:40px; max-width:640px;">
       <div class="eyebrow">The Neighborhood</div>
       <h2>Clarksville, in the heart of Old West Austin.</h2>
-      <p class="lede" style="margin-top:18px;">Located in Clarksville within Old West Austin, The Colorfield places downtown, Lady Bird Lake, the Texas Capitol, and some of Austin's most beloved restaurants and neighborhood destinations within easy reach.</p>
+      <p class="lede" style="margin-top:18px;">The Colorfield places downtown, Lady Bird Lake, the Texas Capitol, and some of Austin’s most beloved restaurants, parks, and neighborhood destinations within easy reach.</p>
     </div>
 
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px; margin-bottom:40px;">
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px;">Dining</div>
-        <div class="lede" style="font-size:0.95rem; line-height:2;">Clark's Oyster Bar<br>Josephine House<br>Jeffrey's</div>
-      </div>
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px;">Coffee &amp; Market</div>
-        <div class="lede" style="font-size:0.95rem; line-height:2;">Swedish Hill<br>Whole Foods Market</div>
-      </div>
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px;">Fitness &amp; Wellness</div>
-        <div class="lede" style="font-size:0.95rem; line-height:2;">Castle Hill Fitness</div>
-      </div>
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px;">Parks &amp; Outdoors</div>
-        <div class="lede" style="font-size:0.95rem; line-height:2;">Pease District Park<br>Lady Bird Lake</div>
-      </div>
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px;">Landmarks</div>
-        <div class="lede" style="font-size:0.95rem; line-height:2;">Downtown Austin<br>Texas State Capitol</div>
-      </div>
+    <div class="neighborhood-directory">
+      <div><div class="eyebrow">Dining</div><button type="button" class="destination-link" data-destination="01"><span>01</span> Clark&rsquo;s Oyster Bar</button><button type="button" class="destination-link" data-destination="02"><span>02</span> Josephine House</button><button type="button" class="destination-link" data-destination="03"><span>03</span> Jeffrey&rsquo;s</button><button type="button" class="destination-link" data-destination="04"><span>04</span> Soup Peddler</button></div>
+      <div><div class="eyebrow">Coffee &amp; Market</div><button type="button" class="destination-link" data-destination="05"><span>05</span> Swedish Hill</button><button type="button" class="destination-link" data-destination="06"><span>06</span> Medici Roasting on West Lynn</button><button type="button" class="destination-link" data-destination="07"><span>07</span> Fresh Plus Grocery on West Lynn</button><button type="button" class="destination-link" data-destination="08"><span>08</span> Whole Foods Market</button></div>
+      <div><div class="eyebrow">Fitness &amp; Wellness</div><button type="button" class="destination-link" data-destination="09"><span>09</span> Castle Hill Fitness</button><button type="button" class="destination-link" data-destination="10"><span>10</span> Align Pilates in Clarksville</button><button type="button" class="destination-link" data-destination="11"><span>11</span> Life Time on West 5th</button></div>
+      <div><div class="eyebrow">Parks &amp; Outdoors</div><button type="button" class="destination-link" data-destination="12"><span>12</span> Pease District Park</button><button type="button" class="destination-link" data-destination="13"><span>13</span> Lady Bird Lake</button><button type="button" class="destination-link" data-destination="14"><span>14</span> West Austin Park</button><button type="button" class="destination-link" data-destination="15"><span>15</span> Shoal Creek Trail</button></div>
+      <div><div class="eyebrow">Landmarks</div><button type="button" class="destination-link" data-destination="16"><span>16</span> Downtown Austin</button><button type="button" class="destination-link" data-destination="17"><span>17</span> Texas State Capitol</button><button type="button" class="destination-link" data-destination="18"><span>18</span> BookPeople</button><button type="button" class="destination-link" data-destination="19"><span>19</span> Austin Central Library</button><button type="button" class="destination-link" data-destination="20"><span>20</span> Donn&rsquo;s Depot</button></div>
     </div>
 
-    <div style="width:100%; aspect-ratio:16/7; margin-bottom:40px; border:1px solid var(--line); overflow:hidden;">
-      <iframe
-        src="https://www.google.com/maps?q=1006+Baylor+Street,+Austin,+TX+78703&output=embed"
-        title="The Colorfield location map"
-        style="width:100%; height:100%; border:0;"
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
+    <div id="neighborhood-map" class="neighborhood-map" aria-label="Map of The Colorfield and 20 neighborhood destinations"></div>
 
     <a href="#contact" class="cta-link">Inquire About Availability &rarr;</a>
   </div>
 </section>
 
-<section id="sales" style="background:var(--ink); padding:100px 0; color:var(--paper);">
+<section id="sales" style="background:var(--ink); padding:82px 0; color:var(--paper);">
   <div class="wrap" style="display:grid; grid-template-columns:0.8fr 1.2fr; gap:70px; align-items:center;">
     <div style="aspect-ratio:2/3; background-image:url('img/bridget-portrait.jpg'); background-size:cover; background-position:center top;">
     </div>
@@ -1030,7 +1008,7 @@
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" style="padding-top:82px; padding-bottom:82px;">
   <div class="wrap contact-grid">
     <div>
       <div class="section-head" style="margin-bottom:34px;">
@@ -1122,6 +1100,31 @@
 </footer>
 
 <script src="/assets/js/hero-video.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  var element = document.getElementById('neighborhood-map');
+  if (!element || typeof L === 'undefined') return;
+  var places = [
+    ['01', "Clark's Oyster Bar", 30.2729697, -97.7571499, '1600 W 6th St'], ['02', 'Josephine House', 30.2805739, -97.7590331, '1601 Waterston Ave'], ['03', "Jeffrey's", 30.2804408, -97.7591677, '1204 W Lynn St'], ['04', 'Soup Peddler', 30.2681155, -97.7484316, '501 W 5th St'],
+    ['05', 'Swedish Hill', 30.2728196, -97.7568072, '1128 W 6th St'], ['06', 'Medici Roasting on West Lynn', 30.2798538, -97.7594626, '1100 W Lynn St'], ['07', 'Fresh Plus Grocery on West Lynn', 30.2808469, -97.7584429, '1221 W Lynn St'], ['08', 'Whole Foods Market', 30.2705855, -97.7532761, '525 N Lamar Blvd'],
+    ['09', 'Castle Hill Fitness', 30.2765791, -97.7519180, '1112 N Lamar Blvd'], ['10', 'Align Pilates in Clarksville', 30.2793837, -97.7600543, '1000 W Lynn St'], ['11', 'Life Time on West 5th', 30.2694831, -97.7515528, '710 W 5th St'],
+    ['12', 'Pease District Park', 30.2844585, -97.7539037, '1100 Kingsbury St'], ['13', 'Lady Bird Lake', 30.2688103, -97.7633824, 'Lady Bird Lake'], ['14', 'West Austin Park', 30.2767228, -97.7575106, '1317 W 10th St'], ['15', 'Shoal Creek Trail', 30.2679234, -97.7504957, 'Shoal Creek Trail'],
+    ['16', 'Downtown Austin', 30.2680536, -97.7447642, 'Downtown Austin'], ['17', 'Texas State Capitol', 30.2746912, -97.7405171, '1100 Congress Ave'], ['18', 'BookPeople', 30.2717791, -97.7529142, '603 N Lamar Blvd'], ['19', 'Austin Central Library', 30.2660164, -97.7517064, '710 W Cesar Chavez St'], ['20', "Donn's Depot", 30.2740700, -97.7634339, '1600 W 5th St']
+  ];
+  var map = L.map(element, { scrollWheelZoom:false });
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'&copy; OpenStreetMap contributors', maxZoom:19 }).addTo(map);
+  var markers = {}, bounds = [];
+  places.forEach(function (place) {
+    var marker = L.marker([place[2], place[3]], { icon:L.divIcon({ className:'destination-marker', html:place[0], iconSize:[28,28], iconAnchor:[14,14] }), title:place[1] }).addTo(map).bindPopup('<strong>'+place[0]+' '+place[1]+'</strong><br>'+place[4]+'<br>Austin, TX');
+    markers[place[0]] = marker; bounds.push([place[2], place[3]]);
+  });
+  var project = [30.2760962, -97.7531658];
+  L.marker(project, { icon:L.divIcon({ className:'colorfield-marker', html:'THE COLORFIELD', iconSize:[118,30], iconAnchor:[59,15] }), zIndexOffset:500 }).addTo(map).bindPopup('<strong>The Colorfield</strong><br>1006 Baylor Street');
+  bounds.push(project); map.fitBounds(bounds, { padding:[24,24] });
+  document.querySelectorAll('.destination-link').forEach(function (link) { link.addEventListener('click', function () { var marker=markers[link.dataset.destination]; if (!marker) return; document.querySelectorAll('.destination-link').forEach(function (item) { item.classList.remove('is-selected'); }); link.classList.add('is-selected'); map.setView(marker.getLatLng(), Math.max(map.getZoom(),14)); marker.openPopup(); }); });
+}());
+</script>
 
 </body>
 </html>
