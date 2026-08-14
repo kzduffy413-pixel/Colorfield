@@ -1,0 +1,63 @@
+/* Consolidated styles for The Colorfield (partial - core layout, colors, and utilities)
+   This file centralizes the main CSS used across pages. Some legacy inline styles remain where necessary.
+*/
+:root {
+  --ink: #17324A;
+  --paper: #f2efe9;
+  --paper-warm: #ece6db;
+  --field-umber: #C1440E;
+  --field-ochre: #F2A93B;
+  --field-slate: #2C7A6B;
+  --field-coral: #E85D4C;
+  --line: rgba(23,50,74,0.14);
+  --line-soft: rgba(242,239,233,0.22);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:Fraunces,serif;font-weight:400}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--field-umber)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 40px}
+header .wordmark{font-family:Fraunces,serif;font-size:1.5rem;color:#fff}
+header nav{display:flex;gap:30px}
+header nav a{font-family:"IBM Plex Mono",monospace;color:#fff;font-size:.78rem;text-transform:uppercase}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;color:#f2efe9;overflow:hidden}
+.hero .hero-video-wrap{position:absolute;inset:0}
+.hero iframe{width:100%;height:100%;border:0;display:block}
+.hero .hero-field{position:absolute;inset:0;background:linear-gradient(180deg, rgba(23,50,74,0.15) 0%, rgba(23,50,74,0.35) 45%, rgba(23,50,74,0.92) 92%)}
+.hero-content{position:relative;padding:0 40px 90px;max-width:1180px;margin:0 auto}
+.hero-tag{font-family:"IBM Plex Mono",monospace;color:var(--field-ochre);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:22px}
+.hero-cta-row{margin-top:24px;display:flex;gap:16px}
+.hero-btn{font-family:"IBM Plex Mono",monospace;text-transform:uppercase;padding:9px 18px;border-radius:2px}
+.hero-btn-solid{background:var(--field-ochre);color:var(--ink)}
+.hero-btn-outline{border:1px solid rgba(242,239,233,0.12);color:#fff}
+section{padding:120px 0}
+.residences{background:var(--ink);color:var(--paper)}
+.unit-table{width:100%;border-collapse:collapse}
+.unit-table th{font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,239,233,0.5);padding:0 0 14px;border-bottom:1px solid var(--line-soft)}
+.unit-table td{padding:20px 0;border-bottom:1px solid var(--line-soft);vertical-align:middle}
+.unit-table .unit-name{font-family:Fraunces,serif;font-size:1.1rem}
+.mono{font-family:"IBM Plex Mono",monospace;color:rgba(242,239,233,0.7)}
+.status-pill{display:inline-block;font-family:"IBM Plex Mono",monospace;padding:5px 11px;border:1px solid rgba(242,239,233,0.3);font-size:.64rem;text-transform:uppercase}
+.status-pill.available{color:var(--field-ochre);border-color:var(--field-ochre)}
+.status-pill.sold{color:rgba(242,239,233,0.4);border-color:rgba(242,239,233,0.2)}
+.section-head h2{font-size:clamp(2rem,3.4vw,2.9rem);font-weight:400;margin-top:14px}
+.lede{font-size:1.08rem;font-weight:300;line-height:1.75;color:rgba(23,50,74,0.82);max-width:620px}
+.arch-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px}
+@media(max-width:860px){.arch-grid{grid-template-columns:1fr}}
+.res-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.res-gallery-item{aspect-ratio:4/3;background-size:cover;background-position:center}
+.res-hero{position:relative;height:72vh;min-height:480px;display:flex;align-items:flex-end}
+.res-hero .res-hero-content{position:relative;padding:0 40px 56px;max-width:1180px;margin:0 auto;color:#f2efe9}
+.contact{background:var(--ink);color:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:500px){.field-row{grid-template-columns:1fr}}
+.submit-btn{background:var(--field-ochre);color:var(--ink);padding:15px 30px;border:none}
+.footer{background:var(--ink);color:rgba(242,239,233,0.45);text-align:center;padding:34px 0}
+/* Colorfield spectrum rule */
+.field-divider{display:flex;height:10px}
+.field-divider span{flex:1}
+.field-divider .f1{background:var(--field-umber)}.field-divider .f2{background:var(--field-ochre)}.field-divider .f3{background:var(--field-slate)}.field-divider .f4{background:var(--field-coral)}
