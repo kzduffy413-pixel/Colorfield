@@ -13,6 +13,7 @@
   --line-soft: rgba(242,239,233,0.22);
 }
 *{box-sizing:border-box;margin:0;padding:0}
+a{color:inherit;text-decoration:none}
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
 h1,h2,h3{font-family:Fraunces,serif;font-weight:400}
@@ -96,7 +97,7 @@ section{padding:120px 0}
 @media(max-width:900px){.homepage-amenities-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.other-residences-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.res-amenities-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
 @media(max-width:600px){.homepage-amenities-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 16px!important}.other-residences-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}.res-amenities-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px 16px!important}}
 .submit-btn{background:var(--field-ochre);color:var(--ink);padding:15px 30px;border:none}
-.footer{background:var(--ink);color:rgba(242,239,233,0.45);text-align:center;padding:34px 0}
+footer{background:var(--ink);color:rgba(242,239,233,0.45);text-align:center;padding:34px 0}
 /* Colorfield spectrum rule */
 .field-divider{display:flex;height:10px}
 .field-divider span{flex:1}
@@ -124,21 +125,11 @@ section{padding:120px 0}
 .details-grid > div:nth-child(8n+7) { border-color: #6B4E9E; }
 .details-grid > div:nth-child(8n+8) { border-color: var(--field-coral); }
 
-/* Residence page: center the description + facts block and let it use the full width,
-   scoped to the section immediately after the video hero so this applies identically
-   across all 8 residence pages without touching their HTML. */
-.res-hero + section {
-  text-align: center;
-}
-.res-hero + section .lede {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
-.res-hero + section .res-facts-grid {
-  justify-content: center;
-  text-align: center;
-}
-.res-hero + section .res-facts-grid > div {
-  text-align: center;
-}
+/* Residence page: description + facts on the left, photo gallery on the right,
+   matching the homepage Design section's side-by-side pattern. */
+.res-split { display:grid; grid-template-columns:1.05fr 0.95fr; gap:60px; align-items:start; }
+@media(max-width:860px) { .res-split { grid-template-columns:1fr; gap:40px; } }
+.res-split .res-facts-grid { grid-template-columns:repeat(2,1fr); gap:24px; }
+.res-split .lede { max-width:100%; text-align:left; }
+.res-split-gallery { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+.res-split-gallery .res-gallery-item:first-child { grid-column:span 2; aspect-ratio:16/10; }
