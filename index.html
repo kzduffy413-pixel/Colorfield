@@ -74,6 +74,9 @@
     color: #fff;
   }
 
+  header .wordmark-col { display: flex; flex-direction: column; }
+  header .wordmark-col .spectrum-rule { width: 90px; margin-top: 6px; mix-blend-mode: normal; }
+
   header nav {
     display: flex;
     align-items: center;
@@ -715,7 +718,10 @@
 <body>
 
 <header>
-  <a href="#top" class="wordmark">THE COLORFIELD</a>
+  <div class="wordmark-col">
+    <a href="#top" class="wordmark">THE COLORFIELD</a>
+    <span class="spectrum-rule on-dark"></span>
+  </div>
   <nav>
     <a href="#residences">Residences</a>
     <a href="#design">Design</a>
