@@ -523,16 +523,17 @@
     background: var(--paper-warm);
   }
 
-  .neighborhood-directory { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:32px; margin-bottom:30px; }
+  .neighborhood-split { display:grid; grid-template-columns: 1fr 1.05fr; gap:64px; align-items:stretch; }
+  .neighborhood-directory { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:28px 32px; margin-bottom:30px; }
   .destination-link { display:block; width:100%; border:0; background:none; color:var(--ink); text-align:left; font:300 0.95rem/1.8 Inter,sans-serif; cursor:pointer; padding:0; }
   .destination-link span { display:inline-block; width:28px; color:rgba(23,50,74,0.46); font:0.72rem "IBM Plex Mono",monospace; letter-spacing:.04em; }
   .destination-link:hover span,.destination-link.is-selected span { color:var(--field-umber); }
-  .neighborhood-map { width:100%; height:400px; margin-bottom:28px; border:1px solid var(--line); overflow:hidden; }
+  .neighborhood-map { width:100%; height:100%; min-height:480px; border:1px solid var(--line); overflow:hidden; }
   .destination-marker,.colorfield-marker { display:flex!important; align-items:center; justify-content:center; border-radius:50%; box-shadow:0 1px 4px rgba(23,50,74,.25); font:500 0.66rem "IBM Plex Mono",monospace; }
   .destination-marker { background:var(--paper); border:2px solid var(--ink); color:var(--ink); }
   .colorfield-marker { border-radius:2px; background:var(--ink); border:2px solid var(--field-ochre); color:var(--paper); letter-spacing:.08em; font-size:.56rem; }
-  @media (max-width:860px) { .neighborhood-directory { grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px 32px; } }
-  @media (max-width:560px) { .neighborhood-directory { grid-template-columns:1fr; gap:24px; } .neighborhood-map { height:360px; } }
+  @media (max-width:960px) { .neighborhood-split { grid-template-columns:1fr; gap:40px; } .neighborhood-map { min-height:420px; } }
+  @media (max-width:640px) { .neighborhood-directory { grid-template-columns:1fr; gap:24px; } }
 
   .nb-grid {
     display: grid;
@@ -969,23 +970,27 @@
 
 <section class="neighborhood" id="neighborhood">
   <div class="wrap">
-    <div class="section-head" style="margin-bottom:40px; max-width:640px;">
-      <div class="eyebrow">The Neighborhood</div>
-      <h2>Clarksville, in the heart of Old West Austin.</h2>
-      <p class="lede" style="margin-top:18px;">The Colorfield places downtown, Lady Bird Lake, the Texas Capitol, and some of Austin&rsquo;s most beloved restaurants, parks, and neighborhood destinations within easy reach.</p>
+    <div class="neighborhood-split">
+      <div>
+        <div class="section-head" style="margin-bottom:32px; max-width:100%;">
+          <div class="eyebrow">The Neighborhood</div>
+          <h2>Clarksville, in the heart of Old West Austin.</h2>
+          <p class="lede" style="margin-top:18px;">The Colorfield places downtown, Lady Bird Lake, the Texas Capitol, and some of Austin&rsquo;s most beloved restaurants, parks, and neighborhood destinations within easy reach.</p>
+        </div>
+
+        <div class="neighborhood-directory">
+          <div><div class="eyebrow">Dining</div><button type="button" class="destination-link" data-destination="01"><span>01</span> Clark&rsquo;s Oyster Bar</button><button type="button" class="destination-link" data-destination="02"><span>02</span> Josephine House</button><button type="button" class="destination-link" data-destination="03"><span>03</span> Jeffrey&rsquo;s</button><button type="button" class="destination-link" data-destination="04"><span>04</span> Soup Peddler</button></div>
+          <div><div class="eyebrow">Coffee &amp; Grocery</div><button type="button" class="destination-link" data-destination="05"><span>05</span> Swedish Hill</button><button type="button" class="destination-link" data-destination="06"><span>06</span> Medici Roasting on West Lynn</button><button type="button" class="destination-link" data-destination="07"><span>07</span> Fresh Plus Grocery on West Lynn</button><button type="button" class="destination-link" data-destination="08"><span>08</span> Whole Foods Market</button><button type="button" class="destination-link" data-destination="21"><span>21</span> Clarksville Market</button></div>
+          <div><div class="eyebrow">Fitness &amp; Wellness</div><button type="button" class="destination-link" data-destination="09"><span>09</span> Castle Hill Fitness</button><button type="button" class="destination-link" data-destination="10"><span>10</span> Align Pilates in Clarksville</button><button type="button" class="destination-link" data-destination="11"><span>11</span> Life Time on West 5th</button></div>
+          <div><div class="eyebrow">Parks &amp; Outdoors</div><button type="button" class="destination-link" data-destination="12"><span>12</span> Pease District Park</button><button type="button" class="destination-link" data-destination="13"><span>13</span> Lady Bird Lake</button><button type="button" class="destination-link" data-destination="14"><span>14</span> West Austin Park</button><button type="button" class="destination-link" data-destination="15"><span>15</span> Shoal Creek Trail</button></div>
+          <div><div class="eyebrow">Landmarks</div><button type="button" class="destination-link" data-destination="16"><span>16</span> Downtown Austin</button><button type="button" class="destination-link" data-destination="17"><span>17</span> Texas State Capitol</button><button type="button" class="destination-link" data-destination="18"><span>18</span> BookPeople</button><button type="button" class="destination-link" data-destination="19"><span>19</span> Austin Central Library</button><button type="button" class="destination-link" data-destination="20"><span>20</span> Donn&rsquo;s Depot</button></div>
+        </div>
+
+        <a href="#contact" class="cta-link">Inquire About Availability &rarr;</a>
+      </div>
+
+      <div id="neighborhood-map" class="neighborhood-map" aria-label="Map of The Colorfield and 21 neighborhood destinations"></div>
     </div>
-
-    <div class="neighborhood-directory">
-      <div><div class="eyebrow">Dining</div><button type="button" class="destination-link" data-destination="01"><span>01</span> Clark&rsquo;s Oyster Bar</button><button type="button" class="destination-link" data-destination="02"><span>02</span> Josephine House</button><button type="button" class="destination-link" data-destination="03"><span>03</span> Jeffrey&rsquo;s</button><button type="button" class="destination-link" data-destination="04"><span>04</span> Soup Peddler</button></div>
-      <div><div class="eyebrow">Coffee &amp; Grocery</div><button type="button" class="destination-link" data-destination="05"><span>05</span> Swedish Hill</button><button type="button" class="destination-link" data-destination="06"><span>06</span> Medici Roasting on West Lynn</button><button type="button" class="destination-link" data-destination="07"><span>07</span> Fresh Plus Grocery on West Lynn</button><button type="button" class="destination-link" data-destination="08"><span>08</span> Whole Foods Market</button><button type="button" class="destination-link" data-destination="21"><span>21</span> Clarksville Market</button></div>
-      <div><div class="eyebrow">Fitness &amp; Wellness</div><button type="button" class="destination-link" data-destination="09"><span>09</span> Castle Hill Fitness</button><button type="button" class="destination-link" data-destination="10"><span>10</span> Align Pilates in Clarksville</button><button type="button" class="destination-link" data-destination="11"><span>11</span> Life Time on West 5th</button></div>
-      <div><div class="eyebrow">Parks &amp; Outdoors</div><button type="button" class="destination-link" data-destination="12"><span>12</span> Pease District Park</button><button type="button" class="destination-link" data-destination="13"><span>13</span> Lady Bird Lake</button><button type="button" class="destination-link" data-destination="14"><span>14</span> West Austin Park</button><button type="button" class="destination-link" data-destination="15"><span>15</span> Shoal Creek Trail</button></div>
-      <div><div class="eyebrow">Landmarks</div><button type="button" class="destination-link" data-destination="16"><span>16</span> Downtown Austin</button><button type="button" class="destination-link" data-destination="17"><span>17</span> Texas State Capitol</button><button type="button" class="destination-link" data-destination="18"><span>18</span> BookPeople</button><button type="button" class="destination-link" data-destination="19"><span>19</span> Austin Central Library</button><button type="button" class="destination-link" data-destination="20"><span>20</span> Donn&rsquo;s Depot</button></div>
-    </div>
-
-    <div id="neighborhood-map" class="neighborhood-map" aria-label="Map of The Colorfield and 21 neighborhood destinations"></div>
-
-    <a href="#contact" class="cta-link">Inquire About Availability &rarr;</a>
   </div>
 </section>
 
