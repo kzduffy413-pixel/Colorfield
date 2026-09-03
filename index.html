@@ -77,6 +77,16 @@
   header .wordmark-col { display: flex; flex-direction: column; }
   header .wordmark-col .spectrum-rule { width: 90px; margin-top: 6px; mix-blend-mode: normal; }
 
+  .spectrum-rule {
+    display: block;
+    height: 3px;
+    width: 130px;
+    margin-top: 14px;
+    background: linear-gradient(90deg, var(--field-umber), var(--field-ochre), var(--field-slate), #3D5A99);
+    border-radius: 2px;
+  }
+  .spectrum-rule.on-dark { margin-top: 10px; }
+
   header nav {
     display: flex;
     align-items: center;
