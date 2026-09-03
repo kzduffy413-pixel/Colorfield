@@ -131,7 +131,7 @@ section{padding:120px 0}
   text-align: center;
 }
 .res-hero + section .lede {
-  max-width: 100%;
+  max-width: 760px;
   margin: 0 auto;
   text-align: center;
 }
