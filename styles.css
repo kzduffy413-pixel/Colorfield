@@ -18,8 +18,10 @@ body{background:var(--paper);color:var(--ink);font-family:Inter,system-ui,-apple
 h1,h2,h3{font-family:Fraunces,serif;font-weight:400}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--field-umber)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
-header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 40px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:24px 40px;mix-blend-mode:difference}
 header .wordmark{font-family:Fraunces,serif;font-size:1.5rem;color:#fff}
+header .wordmark-col { display: flex; flex-direction: column; }
+header .wordmark-col .spectrum-rule { width: 90px; margin-top: 6px; mix-blend-mode: normal; }
 header nav{display:flex;gap:30px}
 header nav a{font-family:"IBM Plex Mono",monospace;color:#fff;font-size:.78rem;text-transform:uppercase}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;color:#f2efe9;overflow:hidden}
