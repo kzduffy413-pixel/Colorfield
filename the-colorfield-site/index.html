@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Colorfield | Luxury Condos in Clarksville, Austin</title>
+<meta name="description" content="The Colorfield: 8 luxury residences for sale in Clarksville, Austin. Alterstudio-designed, move-in ready with downtown and Capitol views.">
+<meta name="keywords" content="Clarksville condos for sale, luxury condos Austin, downtown Austin condo, 1006 Baylor Street Austin, Alterstudio Architecture, boutique condominium Austin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #17324A;
+    --paper: #f2efe9;
+    --paper-warm: #ece6db;
+    --field-umber: #C1440E;
+    --field-ochre: #F2A93B;
+    --field-slate: #2C7A6B;
+    --field-coral: #E85D4C;
+    --line: rgba(23,50,74,0.14);
+    --line-soft: rgba(242,239,233,0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-umber);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+
+  /* Nav */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 40px;
+    mix-blend-mode: difference;
+  }
+
+  header .wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: #fff;
+  }
+
+  header nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  header nav a {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  header nav a.nav-inquire {
+    border: 1px solid #fff;
+    padding: 9px 18px;
+    letter-spacing: 0.1em;
+  }
+
+  .mobile-menu-btn { display: none; }
+
+  @media (max-width: 780px) {
+    header nav { display: none; }
+    .mobile-menu-btn {
+      display: block;
+      background: none; border: none;
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: #fff; cursor: pointer;
+    }
+    .mobile-nav-overlay {
+      position: fixed; inset: 0; z-index: 99;
+      background: var(--ink);
+      display: none;
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 30px;
+    }
+    .mobile-nav-overlay.open { display: flex; }
+    .mobile-nav-overlay a {
+      font-family: 'Fraunces', serif; font-size: 1.6rem; font-weight: 300;
+      color: #f2efe9;
+    }
+    .mobile-sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 98;
+      background: var(--field-ochre); color: var(--ink);
+      text-align: center; padding: 15px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.78rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+  }
+  @media (min-width: 781px) {
+    .mobile-nav-overlay, .mobile-sticky-cta { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: #17324A url('hero-exterior.jpg') center 62% / cover no-repeat;
+    color: #f2efe9;
+    overflow: hidden;
+  }
+
+  .hero-field {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(23,50,74,0.15) 0%, rgba(23,50,74,0.35) 45%, rgba(23,50,74,0.92) 92%);
+  }
+
+  .hero-content {
+    position: relative;
+    padding: 0 40px 90px;
+    max-width: 1180px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--field-ochre);
+    margin-bottom: 22px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 6vw, 5.4rem);
+    font-weight: 300;
+    line-height: 0.98;
+    max-width: 900px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .hero-sub {
+    margin-top: 26px;
+    max-width: 480px;
+    font-size: 1.02rem;
+    font-weight: 300;
+    color: rgba(242,239,233,0.78);
+  }
+
+  .hero-meta {
+    margin-top: 46px;
+    display: flex;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta div {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .hero-meta .num {
+    font-size: 1.6rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+  }
+
+  .hero-meta .lbl {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.55);
+    margin-top: 4px;
+  }
+
+  /* Color field divider, the signature element */
+  .field-divider {
+    display: flex;
+    height: 14px;
+  }
+  .field-divider span { flex: 1; }
+  .field-divider .f1 { background: var(--field-umber); }
+  .field-divider .f2 { background: var(--field-ochre); }
+  .field-divider .f3 { background: var(--field-slate); }
+  .field-divider .f4 { background: var(--field-coral); }
+
+  /* Sections */
+  section { padding: 120px 0; }
+
+  .section-head {
+    max-width: 640px;
+    margin-bottom: 60px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(2rem, 3.4vw, 2.9rem);
+    font-weight: 400;
+    margin-top: 14px;
+  }
+
+  .lede {
+    font-size: 1.08rem;
+    font-weight: 300;
+    line-height: 1.75;
+    max-width: 620px;
+    color: rgba(23,50,74,0.82);
+  }
+
+  .lede + .lede { margin-top: 18px; }
+
+  /* Architecture section */
+  .arch {
+    background: var(--paper);
+  }
+
+  .arch-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+    align-items: start;
+  }
+
+  @media (max-width: 860px) {
+    .arch-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .arch-plate {
+    aspect-ratio: 4/5;
+    background: var(--field-slate);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .arch-plate::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(198,138,46,0.35), transparent 60%);
+  }
+
+  .plate-label {
+    position: absolute;
+    bottom: 22px;
+    left: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.75);
+  }
+
+  /* Highlights */
+  .highlights {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .highlights li {
+    list-style: none;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.92rem;
+    display: flex;
+    gap: 12px;
+  }
+
+  .highlights li:nth-child(odd) { padding-right: 20px; }
+
+  .highlights li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--field-umber);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .highlights { grid-template-columns: 1fr; }
+  }
+
+  /* Residences */
+  .residences {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .residences .eyebrow { color: var(--field-ochre); }
+
+  .residences .lede { color: rgba(242,239,233,0.72); }
+
+  .collection-status {
+    display: flex;
+    gap: 40px;
+    margin: 50px 0 60px;
+    flex-wrap: wrap;
+  }
+
+  .collection-status .num {
+    font-family: 'Fraunces', serif;
+    font-size: 2.6rem;
+    font-weight: 400;
+  }
+
+  .collection-status .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-top: 6px;
+  }
+
+  .unit-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .unit-table th {
+    text-align: left;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--line-soft);
+    font-weight: 400;
+  }
+
+  .unit-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line-soft);
+    font-size: 0.95rem;
+    vertical-align: middle;
+  }
+
+  .unit-table .unit-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.1rem;
+  }
+
+  .unit-table .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.86rem;
+    color: rgba(242,239,233,0.7);
+  }
+
+  .status-pill {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 11px;
+    border: 1px solid rgba(242,239,233,0.3);
+  }
+
+  .status-pill.available {
+    color: var(--field-ochre);
+    border-color: var(--field-ochre);
+  }
+
+  .status-pill.sold {
+    color: rgba(242,239,233,0.4);
+    border-color: rgba(242,239,233,0.2);
+  }
+
+  .view-res-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--field-ochre);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 720px) {
+    .unit-table thead { display: none; }
+    .unit-table tr { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 18px 0; border-bottom: 1px solid var(--line-soft); }
+    .unit-table td { border: none; padding: 2px 0; }
+  }
+
+  /* Neighborhood */
+  .neighborhood {
+    background: var(--paper-warm);
+  }
+
+  .nb-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .nb-grid { grid-template-columns: 1fr; gap: 40px; }
+  }
+
+  .nb-plate {
+    aspect-ratio: 1/1;
+    background: var(--field-umber);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .nb-plate::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(200deg, rgba(61,74,73,0.5), transparent 55%);
+  }
+
+  .cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--field-umber);
+    border-bottom: 1px solid var(--field-umber);
+    padding-bottom: 4px;
+  }
+
+  /* Contact */
+  .contact {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+  }
+
+  .contact-detail {
+    margin-bottom: 26px;
+  }
+
+  .contact-detail .lbl {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-bottom: 6px;
+  }
+
+  .contact-detail .val {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 500px) {
+    .field-row { grid-template-columns: 1fr; }
+  }
+
+  .field {
+    margin-bottom: 26px;
+  }
+
+  .field label {
+    display: block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.64rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(242,239,233,0.5);
+    margin-bottom: 8px;
+  }
+
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(242,239,233,0.3);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.98rem;
+    padding: 8px 0;
+    outline: none;
+  }
+
+  .field select option { color: var(--ink); }
+
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--field-ochre);
+  }
+
+  .submit-btn {
+    margin-top: 12px;
+    align-self: flex-start;
+    background: var(--field-ochre);
+    color: var(--ink);
+    border: none;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .submit-btn:hover { background: #d99a3c; }
+
+  .form-note {
+    font-size: 0.82rem;
+    color: rgba(242,239,233,0.5);
+    margin-top: 16px;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(242,239,233,0.45);
+    text-align: center;
+    padding: 34px 0 44px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+  }
+
+  footer a { color: rgba(242,239,233,0.7); }
+
+  ::selection { background: var(--field-ochre); color: var(--ink); }
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ApartmentComplex",
+  "name": "The Colorfield",
+  "description": "A boutique collection of 10 luxury residences in Clarksville, Austin, designed by Alterstudio Architecture.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1006 Baylor Street",
+    "addressLocality": "Austin",
+    "addressRegion": "TX",
+    "postalCode": "78703",
+    "addressCountry": "US"
+  },
+  "telephone": "512-796-2602",
+  "numberOfAccommodationUnits": 10,
+  "url": "https://thecolorfieldaustin.com"
+}
+</script>
+</head>
+<body>
+
+<header>
+  <a href="#top" class="wordmark">THE COLORFIELD</a>
+  <nav>
+    <a href="#residences">Residences</a>
+    <a href="#design">Design</a>
+    <a href="#neighborhood">Neighborhood</a>
+    <a href="#bridget">Bridget</a>
+    <a href="#contact" class="nav-inquire">Inquire</a>
+  </nav>
+  <button class="mobile-menu-btn" onclick="document.getElementById('mobileNav').classList.toggle('open')">Menu</button>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNav">
+  <a href="#residences" onclick="document.getElementById('mobileNav').classList.remove('open')">Residences</a>
+  <a href="#design" onclick="document.getElementById('mobileNav').classList.remove('open')">Design</a>
+  <a href="#neighborhood" onclick="document.getElementById('mobileNav').classList.remove('open')">Neighborhood</a>
+  <a href="#bridget" onclick="document.getElementById('mobileNav').classList.remove('open')">Bridget</a>
+  <a href="#contact" onclick="document.getElementById('mobileNav').classList.remove('open')">Inquire</a>
+</div>
+
+<a href="#contact" class="mobile-sticky-cta">Inquire</a>
+
+<section class="hero" id="top">
+  <div class="hero-video-wrap">
+    <img src="hero-exterior.jpg" alt="The Colorfield exterior at dusk" class="hero-poster" id="heroPoster">
+    <iframe
+      id="heroVideo"
+      src="https://www.youtube-nocookie.com/embed/xpx2CIHC3bk?autoplay=1&mute=1&loop=1&playlist=xpx2CIHC3bk&controls=0&modestbranding=1&playsinline=1&rel=0&showinfo=0&iv_load_policy=3"
+      title="The Colorfield"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      onload="document.getElementById('heroPoster').style.opacity='0';">
+    </iframe>
+  </div>
+  <div class="hero-field"></div>
+  <div class="hero-content">
+    <div class="hero-tag">1006 Baylor Street<br>Clarksville &middot; Austin, Texas</div>
+    <h1>Eight residences.<br><em>Move in ready.</em></h1>
+    <div class="hero-cta-row">
+      <a href="#residences" class="hero-btn hero-btn-solid">View Residences</a>
+      <a href="#contact" class="hero-btn hero-btn-outline">Request A Private Tour</a>
+    </div>
+  </div>
+</section>
+
+<section class="residences" id="residences" style="padding-top:70px; padding-bottom:0;">
+  <div class="wrap" style="padding-top:60px;">
+    <div class="section-head">
+      <div class="eyebrow">The Residences</div>
+      <h2>Eight residences, each its own.</h2>
+      <p class="lede" style="margin-top:18px;">Construction is complete and eight residences are available for immediate move in. Each offers generous interiors, private outdoor living, wide plank white oak flooring, and a distinct relationship to the surrounding city.</p>
+    </div>
+
+    <div class="collection-status">
+      <div><div class="num">8</div><div class="lbl">Available Now</div></div>
+      <div><div class="num">2</div><div class="lbl">Sold</div></div>
+      <div><div class="num">2</div><div class="lbl">Reserved Parking Spaces Included</div></div>
+    </div>
+
+    <table class="unit-table">
+      <thead>
+        <tr>
+          <th>Residence</th>
+          <th>Beds / Baths</th>
+          <th>Interior SF</th>
+          <th>Total SF</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="unit-name">Residence 201</td><td class="mono">3 / 3.5</td><td class="mono">3,575 SF</td><td class="mono">3,844 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-201.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 202</td><td class="mono">3 / 3.5</td><td class="mono">3,293 SF</td><td class="mono">3,476 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-202.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 203</td><td class="mono">3 / 3.5</td><td class="mono">3,302 SF</td><td class="mono">3,485 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-203.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 204</td><td class="mono">3 / 3.5</td><td class="mono">3,744 SF</td><td class="mono">4,013 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-204.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 301</td><td class="mono">3 / 3.5</td><td class="mono">3,575 SF</td><td class="mono">3,844 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-301.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 302</td><td class="mono">3 / 3.5</td><td class="mono">3,293 SF</td><td class="mono">3,476 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-302.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 303</td><td class="mono">3 / 3.5</td><td class="mono">3,302 SF</td><td class="mono">3,485 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-303.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+        <tr><td class="unit-name">Residence 304</td><td class="mono">3 / 3.5</td><td class="mono">3,744 SF</td><td class="mono">4,013 SF</td><td><span class="status-pill available">Available</span></td><td><a href="residence-304.html" class="view-res-link">View Residence &rarr;</a></td></tr>
+      </tbody>
+    </table>
+    <p class="form-note" style="margin-top:20px;">Pricing available upon request through the listing agent.</p>
+  </div>
+</section>
+
+<section style="padding:0 0 100px; background:var(--paper);">
+  <div class="wrap">
+    <div class="res-gallery" style="display:grid; grid-template-columns:1.4fr 1fr; gap:14px; margin-bottom:14px;">
+      <div style="aspect-ratio:4/3; background-image:url('gallery-interior.jpg'); background-size:cover; background-position:center;"></div>
+      <div style="aspect-ratio:4/3; background-image:url('atelier-interior.jpg'); background-size:cover; background-position:center;"></div>
+    </div>
+    <div class="res-gallery" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px;">
+      <div style="aspect-ratio:3/4; background-image:url('img/204/2.jpg'); background-size:cover; background-position:center;"></div>
+      <div style="aspect-ratio:3/4; background-image:url('img/302/1.jpg'); background-size:cover; background-position:center;"></div>
+      <div style="aspect-ratio:3/4; background-image:url('img/201/3.jpg'); background-size:cover; background-position:center;"></div>
+    </div>
+  </div>
+</section>
+
+<section class="arch" id="design">
+  <div class="wrap arch-grid">
+    <div>
+      <div class="section-head">
+        <div class="eyebrow">The Design</div>
+        <h2>Architecture with intention.</h2>
+      </div>
+      <p class="lede">Designed by Alterstudio Architecture, The Colorfield brings a distinctly architectural approach to residential living in the heart of Clarksville. Expansive walls of glass draw natural light deep into each residence while framing views toward downtown Austin and the Texas Capitol.</p>
+      <p class="lede">Generous interiors open to private outdoor living spaces, creating a natural connection between inside and out. Wide plank white oak floors bring warmth throughout each residence, balancing the building's clean architectural lines with a distinctly residential character.</p>
+
+      <ul class="highlights">
+        <li>Boutique collection of 10 residences</li>
+        <li>Floor to ceiling curtain wall glass</li>
+        <li>Wide plank white oak flooring throughout</li>
+        <li>Private balconies and outdoor living for all eight available residences</li>
+        <li>Eastern views toward downtown Austin and the Texas Capitol</li>
+        <li>Two reserved parking spaces per residence</li>
+        <li>Controlled access building</li>
+        <li>Staffed concierge and front desk</li>
+        <li>Construction complete, move in ready</li>
+      </ul>
+
+      <div style="display:flex; gap:50px; flex-wrap:wrap; margin-top:40px; padding-top:30px; border-top:1px solid var(--line);">
+        <div>
+          <div class="eyebrow">Architecture</div>
+          <div style="font-family:'Fraunces',serif; font-size:1.05rem; margin-top:6px;">Alterstudio Architecture, LLP</div>
+        </div>
+        <div>
+          <div class="eyebrow">Developer</div>
+          <div style="font-family:'Fraunces',serif; font-size:1.05rem; margin-top:6px;">Cumby Group</div>
+        </div>
+        <div>
+          <div class="eyebrow">Recognition</div>
+          <div style="font-family:'Fraunces',serif; font-size:1.05rem; margin-top:6px;">Austin Business Journal, Best New Development</div>
+        </div>
+      </div>
+    </div>
+    <div class="arch-plate" style="background-image:url('arch-elevation.jpg'); background-size:cover; background-position:center;">
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper-warm); padding:100px 0;">
+  <div class="wrap nb-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:24px;">
+        <div class="eyebrow">A Site With History</div>
+        <h2>Where creativity once gathered.</h2>
+      </div>
+      <p class="lede">From 2010 until its closure in 2019, this site was home to HOPE Outdoor Gallery, the community art park that made this stretch of Baylor Street a destination for artists and visitors alike.</p>
+      <p class="lede" style="margin-top:16px;">That legacy continues inside The Colorfield, where a commissioned work by internationally recognized artist Ysabel LeMay carries the site's creative spirit into its next chapter.</p>
+    </div>
+    <div class="nb-plate" style="background-image:url('entrance-signage.jpg'); background-size:cover; background-position:center;">
+    </div>
+  </div>
+</section>
+
+<section class="neighborhood" id="neighborhood">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:40px; max-width:640px;">
+      <div class="eyebrow">Welcome to the Neighborhood</div>
+      <h2>Clarksville, at the pulse of downtown.</h2>
+      <p class="lede" style="margin-top:18px;">Located in Clarksville, one of Austin's most established and sought after neighborhoods, The Colorfield offers a residential setting just moments from downtown.</p>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px; margin-bottom:40px;">
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Dining</div>
+        <div class="lede" style="font-size:0.95rem; line-height:2;">Clark's Oyster Bar<br>Josephine House<br>Jeffrey's</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Coffee &amp; Market</div>
+        <div class="lede" style="font-size:0.95rem; line-height:2;">Swedish Hill<br>Whole Foods Market</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Parks &amp; Outdoors</div>
+        <div class="lede" style="font-size:0.95rem; line-height:2;">Pease District Park<br>Lady Bird Lake</div>
+      </div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:14px;">Landmarks</div>
+        <div class="lede" style="font-size:0.95rem; line-height:2;">Downtown Austin<br>Texas State Capitol</div>
+      </div>
+    </div>
+
+    <a href="#contact" class="cta-link">Inquire About Availability &rarr;</a>
+  </div>
+</section>
+
+<section id="bridget" style="background:var(--ink); padding:100px 0; color:var(--paper);">
+  <div class="wrap" style="display:grid; grid-template-columns:0.8fr 1.2fr; gap:70px; align-items:center;">
+    <div style="aspect-ratio:2/3; background-image:url('img/bridget-portrait.jpg'); background-size:cover; background-position:center top;">
+    </div>
+    <div>
+      <div class="eyebrow" style="color:var(--field-ochre); margin-bottom:14px;">Exclusively Represented By</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.6rem); font-weight:400; margin-bottom:6px;">Bridget Ramey</h2>
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:0.8rem; letter-spacing:0.06em; color:rgba(242,239,233,0.6); margin-bottom:26px;">Kuper Sotheby's International Realty</div>
+
+      <p class="lede" style="color:rgba(242,239,233,0.78); margin-bottom:16px;">Recognized among the top real estate advisors in Texas, Bridget Ramey specializes in Austin's most exceptional homes, architecturally significant residences, waterfront estates, and private offerings.</p>
+      <p class="lede" style="color:rgba(242,239,233,0.78); margin-bottom:16px;">As a leading advisor with Kuper Sotheby's International Realty, Bridget has represented nearly a billion dollars in sold real estate transactions since 2020 and has been recognized among Sotheby's International Realty's Top 100 agents worldwide.</p>
+      <p class="lede" style="color:rgba(242,239,233,0.78); margin-bottom:34px;">Known for her discretion, strategic marketing, and highly personalized approach, Bridget combines deep Austin market expertise with the global reach of Sotheby's International Realty to deliver thoughtful representation at every stage.</p>
+
+      <div style="display:flex; gap:26px; flex-wrap:wrap; align-items:center;">
+        <a href="#bridget-video" class="cta-link" onclick="document.getElementById('bridgetVideoWrap').style.display='block'; this.style.display='none'; return false;">Meet Bridget &rarr;</a>
+        <a href="#contact" class="cta-link">Contact Bridget &rarr;</a>
+        <a href="https://bridgetramey.com" target="_blank" rel="noopener" class="cta-link">Learn more at bridgetramey.com &rarr;</a>
+      </div>
+
+      <div id="bridgetVideoWrap" style="display:none; margin-top:36px; position:relative; width:100%; padding-top:56.25%; background:#000;">
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/t8E3p1AlE5o"
+          title="Meet Bridget Ramey"
+          style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:34px;">
+        <div class="eyebrow">Contact The Colorfield</div>
+        <h2>The building is complete.<br>Come see it.</h2>
+        <p class="lede" style="color:rgba(242,239,233,0.72); margin-top:14px;">Eight residences remain, fully finished and ready for immediate move-in. Schedule a private tour of The Colorfield with Bridget Ramey.</p>
+      </div>
+
+      <div class="contact-detail">
+        <div class="lbl">Address</div>
+        <div class="val">1006 Baylor Street<br>Austin, TX 78703</div>
+      </div>
+      <div class="contact-detail">
+        <div class="lbl">Phone</div>
+        <div class="val"><a href="tel:512-796-2602">512.796.2602</a></div>
+      </div>
+      <div class="contact-detail">
+        <div class="lbl">Listed By</div>
+        <div class="val">Bridget Ramey, Kuper Sotheby's International Realty</div>
+      </div>
+    </div>
+
+    <form name="tour-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+      <input type="hidden" name="form-name" value="tour-request">
+      <p style="display:none;"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="eyebrow" style="margin-bottom:18px;">Request A Private Tour</div>
+      <div class="field-row">
+        <div class="field">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="first-name" required>
+        </div>
+        <div class="field">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="last-name" required>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="residence-interest">Residence of Interest</label>
+        <select id="residence-interest" name="residence-of-interest">
+          <option value="General Inquiry">General Inquiry</option>
+          <option value="Residence 201">Residence 201</option>
+          <option value="Residence 202">Residence 202</option>
+          <option value="Residence 203">Residence 203</option>
+          <option value="Residence 204">Residence 204</option>
+          <option value="Residence 301">Residence 301</option>
+          <option value="Residence 302">Residence 302</option>
+          <option value="Residence 303">Residence 303</option>
+          <option value="Residence 304">Residence 304</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="agent">Are You an Agent?</label>
+        <select id="agent" name="are-you-an-agent">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Request A Private Tour</button>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Pre-select Residence of Interest if arriving with ?residence=XXX in the URL
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var res = params.get('residence');
+    var sel = document.getElementById('residence-interest');
+    if (res && sel) {
+      for (var i = 0; i < sel.options.length; i++) {
+        if (sel.options[i].value === 'Residence ' + res) { sel.selectedIndex = i; break; }
+      }
+    }
+  })();
+</script>
+
+<footer>
+  <div class="wrap">The Colorfield &middot; 1006 Baylor Street, Austin, TX 78703 &middot; Represented by Bridget Ramey, Kuper Sotheby's International Realty</div>
+</footer>
+
+</body>
+</html>
